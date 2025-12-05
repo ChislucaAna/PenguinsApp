@@ -88,3 +88,6 @@ class PenguinValidator:
         for field_name, value in required_fields.items():
             if value is None or value == "":
                 raise ValueError(f"Missing required field: {field_name}")
+
+        return Penguin(species=penguin.species,flipper_length=penguin.flipper_length,culmen_length=penguin.culmen_length,
+                       culmen_depth=penguin.culmen_depth,body_mass=penguin.body_mass,island=penguin.island,sex=penguin.sex)

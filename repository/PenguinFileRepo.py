@@ -39,23 +39,18 @@ class PenguinFileRepo:
                 try:
                     # Try to parse date in multiple formats
                     date_parsed = None
-                    for date_format in ["%Y-%m-%d","%m/%d/%Y"]:
+                    for date_format in ["%Y-%m-%d", "%m/%d/%Y", "%d/%m/%Y"]:
                         try:
                             date_parsed = datetime.strptime(date_egg, date_format).date()
                             break
                         except ValueError:
                             continue
-
-                    if date_parsed is None:
-                        raise ValueError(f"Could not parse date '{date_egg}' with any known format")
-
                     penguin = Penguin(study_name, int(sample_number), species, region, island, stage, individual,
                                       clutch_completion,
                                       date_parsed, float(culmen_length), float(culmen_depth),
                                       int(flipper_length), int(body_mass), sex, float(delta_15_n), float(delta_13_c),
                                       comments)
                 except ValueError as e:
-                    print(f"Invalid data in line: {line}, {e}")
                     continue
                 penguins.append(penguin)
 

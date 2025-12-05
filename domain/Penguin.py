@@ -4,9 +4,9 @@ class Penguin:
     Holds information from one row of the penguin dataset.
     """
 
-    def __init__(self, study_name, sample_number:int, species, region, island, stage,
-                 individual, clutch_completion, date_egg:date, culmen_length:float, culmen_depth:float,
-                 flipper_length:int, body_mass:int, sex, delta_15_n:float, delta_13_c:float, comments):
+    def __init__(self, study_name=None, sample_number:int=None, species=None, region=None, island=None, stage=None,
+                 individual=None, clutch_completion=None, date_egg:date=None, culmen_length:float=None, culmen_depth:float=None,
+                 flipper_length:int=None, body_mass:int=None, sex=None, delta_15_n:float=None, delta_13_c:float=None, comments=None):
 
         self.__study_name = study_name
         self.__sample_number = sample_number

@@ -19,8 +19,8 @@ class PenguinService:
         """
         if self.__special_validation:
             try:
-                self.__penguin_validator.validate_special_fields(penguin)
-                self.__penguin_repo.add_penguin(penguin)
+                validated_penguin=self.__penguin_validator.validate_special_fields(penguin)
+                self.__penguin_repo.add_penguin(validated_penguin)
             except ValueError:
                 return
         else:
