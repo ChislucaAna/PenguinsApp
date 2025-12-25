@@ -1,5 +1,6 @@
 from domain.Penguin import Penguin
 from repository.PenguinRepo import PenguinFileRepo
+import glob
 class PenguinService:
     def __init__(self,repo:PenguinFileRepo,fields):
         self.__repo=repo
@@ -21,3 +22,7 @@ class PenguinService:
         new_repository = PenguinFileRepo(filename)
         new_service = PenguinService(new_repository, fields)
         new_service.save_to_file(penguins, fields)
+    
+    @staticmethod
+    def get_available_data():
+        return(glob.glob("datasets/*.csv"))
